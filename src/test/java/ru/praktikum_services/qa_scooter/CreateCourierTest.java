@@ -35,7 +35,7 @@ public class CreateCourierTest {
         int statusCode = createResponse.extract().statusCode();
         boolean isCourierCreated = createResponse.extract().path("ok");
         Assert.assertEquals(201, statusCode);
-        Assert.assertEquals(true, isCourierCreated);
+        Assert.assertTrue(isCourierCreated);
 
         ValidatableResponse loginResponse = courierClient.login(CourierCredentials.from(courier));
         courierId = loginResponse.extract().path("id");
@@ -51,7 +51,7 @@ public class CreateCourierTest {
         int statusCode = createResponse.extract().statusCode();
         boolean isCourierCreated = createResponse.extract().path("ok");
         Assert.assertEquals(201, statusCode);
-        Assert.assertEquals(true, isCourierCreated);
+        Assert.assertTrue(isCourierCreated);
 
         ValidatableResponse loginResponse = courierClient.login(CourierCredentials.from(courier));
         courierId = loginResponse.extract().path("id");
